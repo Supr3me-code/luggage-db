@@ -1,11 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+// import { MenuCard } from "./src/modules/MenuCard/menu";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Luggage db</Text>
+      <Text>Luggage DB</Text>
       <StatusBar style="auto" />
+      {/* <MenuCard /> */}
     </View>
   );
 }
