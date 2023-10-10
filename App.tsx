@@ -41,6 +41,7 @@ const App = () => {
                 fontSize: 24,
               },
               title: "Add a Location",
+              headerBackTitle: ''
             }}
           ></Stack.Screen>
           <Stack.Screen
@@ -54,6 +55,7 @@ const App = () => {
                 fontSize: 24,
               },
               title: "Create",
+              headerBackTitle: ''
             }}
           ></Stack.Screen>
           <Stack.Screen
@@ -67,6 +69,7 @@ const App = () => {
                 fontSize: 24,
               },
               title: "Explore",
+              headerBackTitle: ''
             }}
           ></Stack.Screen>
           <Stack.Screen
@@ -80,6 +83,7 @@ const App = () => {
                 fontSize: 24,
               },
               title: "Know About Me",
+              headerBackTitle: ''
             }}
           ></Stack.Screen>
           <Stack.Screen
@@ -93,6 +97,7 @@ const App = () => {
                 fontSize: 24,
               },
               title: "Search",
+              headerBackTitle: ''
             }}
           ></Stack.Screen>
         </Stack.Navigator>

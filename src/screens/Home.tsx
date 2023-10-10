@@ -17,7 +17,7 @@ const Home = () => {
       <View style={styles.ctaContainer}>
         {screens &&
           screens.map(({ title, onPress }) => {
-            return <Card title={title} onPress={onPress} key={title}/>;
+            return <Card title={title} onPress={onPress} key={title} />;
           })}
       </View>
     </LinearGradient>
@@ -35,5 +35,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-around",
+    maxHeight: "100%",
   },
 });

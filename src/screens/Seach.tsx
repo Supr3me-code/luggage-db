@@ -3,10 +3,12 @@ import React from "react";
 import { StyleSheet } from "react-native";
 
 const Search = () => {
-  <LinearGradient
-    colors={["#ff3200", "#000"]}
-    style={styles.container}
-  ></LinearGradient>;
+  return (
+    <LinearGradient
+      colors={["#ff3200", "#000"]}
+      style={styles.container}
+    ></LinearGradient>
+  );
 };
 
 export default Search;

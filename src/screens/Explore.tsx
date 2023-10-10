@@ -1,12 +1,13 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text } from "react-native";
 
 const Explore = () => {
-  <LinearGradient
-    colors={["#ff3200", "#000"]}
-    style={styles.container}
-  ></LinearGradient>;
+  return (
+    <LinearGradient colors={["#ff3200", "#000"]} style={styles.container}>
+      <Text></Text>
+    </LinearGradient>
+  );
 };
 
 export default Explore;
