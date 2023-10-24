@@ -8,6 +8,7 @@ import Create from "./src/screens/Create";
 import Explore from "./src/screens/Explore";
 import KnowMe from "./src/screens/KnowAboutMe";
 import Search from "./src/screens/Seach";
+import Login from "./src/screens/Login";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,14 @@ const App = () => {
       <StatusBar style="dark" />
       <NavigationContainer>
         <Stack.Navigator>
+          {/* <Stack.Screen
+            name="login"
+            component={Login}
+            options={{
+              title: "Login",
+              headerShown: false,
+            }}
+          ></Stack.Screen> */}
           <Stack.Screen
             name="home"
             component={Home}
@@ -41,7 +50,7 @@ const App = () => {
                 fontSize: 24,
               },
               title: "Add a Location",
-              headerBackTitle: ''
+              headerBackTitle: "",
             }}
           ></Stack.Screen>
           <Stack.Screen
@@ -55,7 +64,7 @@ const App = () => {
                 fontSize: 24,
               },
               title: "Create",
-              headerBackTitle: ''
+              headerBackTitle: "",
             }}
           ></Stack.Screen>
           <Stack.Screen
@@ -69,7 +78,7 @@ const App = () => {
                 fontSize: 24,
               },
               title: "Explore",
-              headerBackTitle: ''
+              headerBackTitle: "",
             }}
           ></Stack.Screen>
           <Stack.Screen
@@ -83,7 +92,7 @@ const App = () => {
                 fontSize: 24,
               },
               title: "Know About Me",
-              headerBackTitle: ''
+              headerBackTitle: "",
             }}
           ></Stack.Screen>
           <Stack.Screen
@@ -97,7 +106,7 @@ const App = () => {
                 fontSize: 24,
               },
               title: "Search",
-              headerBackTitle: ''
+              headerBackTitle: "",
             }}
           ></Stack.Screen>
         </Stack.Navigator>
