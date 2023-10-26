@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     padding: 20,
-    margin: 10,
+    margin: 5,
   },
   title: {
     color: "#fff",

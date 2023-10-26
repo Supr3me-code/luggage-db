@@ -9,6 +9,8 @@ import Explore from "./src/screens/Explore";
 import KnowMe from "./src/screens/KnowAboutMe";
 import Search from "./src/screens/Seach";
 import Login from "./src/screens/Login";
+import ItemDetails from "./src/screens/ItemDetails";
+import LuggageDetails from "./src/screens/LuggageDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -69,7 +71,7 @@ const App = () => {
           ></Stack.Screen>
           <Stack.Screen
             name="explore"
-            component={Explore}
+            component={ItemDetails}
             options={{
               headerStyle: { backgroundColor: "#ff3200" },
               headerTintColor: "#000",
@@ -97,7 +99,7 @@ const App = () => {
           ></Stack.Screen>
           <Stack.Screen
             name="search"
-            component={Search}
+            component={LuggageDetails}
             options={{
               headerStyle: { backgroundColor: "#ff3200" },
               headerTintColor: "#000",

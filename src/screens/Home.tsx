@@ -1,7 +1,7 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import Card from "../modules/Card/Card";
+import Card from "../modules/Card";
 
 const screens = [
   { title: "Explore", onPress: "explore" },
