@@ -1,11 +1,16 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useLayoutEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import ListItem from "../elements/ListItem";
 import Label from "../elements/Label";
+import LabelCard from "../modules/LabelCard";
 
 interface IItemDetails {
   navigation?: any;
+  room?: string;
+  area?: string;
+  luggage?: string;
+  imageUrl?: string;
 }
 
 const ItemDetails = ({ navigation }: IItemDetails) => {
@@ -17,17 +22,16 @@ const ItemDetails = ({ navigation }: IItemDetails) => {
   return (
     <LinearGradient colors={["#ff3200", "#000"]} style={styles.container}>
       <View style={styles.content}>
-        <View style={styles.innerContainer}>
-          <Label title="Room" />
-          <ListItem title="Dishant's Room" />
-        </View>
-        <View style={styles.innerContainer}>
-          <Label title="Area" />
-          <ListItem title="Bed Top Right" />
-        </View>
-        <View style={styles.innerContainer}>
-          <Label title="Luggage" />
-          <ListItem title="Singapore Red Bag" />
+        <LabelCard labelTitle="Room" itemTitle="Dishant's Room" />
+        <LabelCard labelTitle="Area" itemTitle="Bed Top RIght" />
+        <LabelCard labelTitle="Luggage" itemTitle="Pink American Tourister" />
+        <View style={styles.imageContainer}>
+          <Image
+            source={{
+              uri: "https://madisarshop.com/wp-content/uploads/2021/01/black-red-square-pattern-readymade-bharatanatyam-practise-saree.jpg",
+            }}
+            style={styles.image}
+          />
         </View>
       </View>
     </LinearGradient>
@@ -37,13 +41,18 @@ const ItemDetails = ({ navigation }: IItemDetails) => {
 export default ItemDetails;
 
 const styles = StyleSheet.create({
-  innerContainer: {
-    marginVertical: 10,
-  },
   content: {
     marginVertical: 20,
   },
   container: {
     flex: 1,
+  },
+  imageContainer: {
+    alignItems: "center",
+  },
+  image: {
+    margin: 15,
+    height: 200,
+    width: 200,
   },
 });

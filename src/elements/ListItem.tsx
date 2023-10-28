@@ -4,7 +4,7 @@ import { Pressable, StyleSheet, View, Text } from "react-native";
 interface IListItem {
   title: string;
   type?: string;
-  onPress?: () => {};
+  onPress?: () => void;
 }
 
 const ListItem = ({ title, type, onPress }: IListItem) => {

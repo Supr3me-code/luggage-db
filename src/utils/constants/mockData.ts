@@ -1,40 +1,100 @@
-export const user = {
+export const USER = {
   name: "Dishant Arora",
 };
 
-export const rooms = [
+export const ROOMS = [
   {
-    id: "room1 id",
     name: "Sample Room 1",
-    areas: ["area1 id", "area2 id"],
+    type: "room",
+    items: ["Sample area 1", "Sample area 2"],
   },
 ];
 
-export const areas = [
+export const AREAS = [
   {
-    id: "area1 id",
     name: "Sample area 1",
-    luggages: ["luggage1 id", "luggage2 id"],
+    type: "area",
+    items: ["Sample luggage 1", "Sample luggage 2"],
+    independentItems: {
+      name: "Independent Items",
+      type: "luggage",
+      items: ["Sample Item 2", "Sample Item 4", "Sample Item 6"],
+    },
+  },
+  {
+    name: "Sample area 2",
+    type: "area",
+    items: ["Sample luggage 3", "Sample luggage 4"],
+    independentItems: {
+      name: "Independent Items",
+      type: "luggage",
+      items: ["Sample Item 3", "Sample Item 5"],
+    },
   },
 ];
 
-export const luggages = [
+export const LUGGAGES = [
   {
-    id: "luggage1 id",
     name: "Sample luggage 1",
-    items: ["item1 id", "item2 id"],
+    type: "luggage",
+    items: ["Sample Item 1", "Sample Item 2"],
+  },
+  {
+    name: "Sample luggage 2",
+    type: "luggage",
+    items: ["Sample Item 3", "Sample Item 4"],
+  },
+  {
+    name: "Sample luggage 3",
+    type: "luggage",
+    items: ["Sample Item 5", "Sample Item 6"],
+  },
+  {
+    name: "Sample luggage 4",
+    type: "luggage",
+    items: ["Sample Item 7", "Sample Item 8"],
   },
 ];
 
-export const items = [
+export const ITEMS = [
   {
-    id: "item1 id",
     name: "Sample Item 1",
+    type: "item",
     image: "",
   },
   {
-    id: "item2 id",
     name: "Sample Item 2",
+    type: "item",
+    image: "",
+  },
+  {
+    name: "Sample Item 3",
+    type: "item",
+    image: "",
+  },
+  {
+    name: "Sample Item 4",
+    type: "item",
+    image: "",
+  },
+  {
+    name: "Sample Item 5",
+    type: "item",
+    image: "",
+  },
+  {
+    name: "Sample Item 6",
+    type: "item",
+    image: "",
+  },
+  {
+    name: "Sample Item 7",
+    type: "item",
+    image: "",
+  },
+  {
+    name: "Sample Item 8",
+    type: "item",
     image: "",
   },
 ];

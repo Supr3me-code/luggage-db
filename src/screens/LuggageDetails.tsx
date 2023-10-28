@@ -7,6 +7,8 @@ import LabelCard from "../modules/LabelCard";
 
 interface ILuggageDetails {
   navigation?: any;
+  room?: string;
+  area?: string;
 }
 
 const LuggageDetails = ({ navigation }: ILuggageDetails) => {

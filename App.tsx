@@ -11,6 +11,8 @@ import Search from "./src/screens/Seach";
 import Login from "./src/screens/Login";
 import ItemDetails from "./src/screens/ItemDetails";
 import LuggageDetails from "./src/screens/LuggageDetails";
+import ItemList from "./src/screens/ItemsList";
+import { ROOMS } from "./src/utils/constants/mockData";
 
 const Stack = createNativeStackNavigator();
 
@@ -57,7 +59,7 @@ const App = () => {
           ></Stack.Screen>
           <Stack.Screen
             name="create"
-            component={Create}
+            component={ItemDetails}
             options={{
               headerStyle: { backgroundColor: "#ff3200" },
               headerTintColor: "#000",
@@ -71,7 +73,8 @@ const App = () => {
           ></Stack.Screen>
           <Stack.Screen
             name="explore"
-            component={ItemDetails}
+            component={ItemList}
+            initialParams={{rooms: ROOMS}}
             options={{
               headerStyle: { backgroundColor: "#ff3200" },
               headerTintColor: "#000",
