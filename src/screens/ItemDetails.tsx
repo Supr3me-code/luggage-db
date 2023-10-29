@@ -12,7 +12,6 @@ interface IItemDetails {
 
 const ItemDetails = ({ navigation, route }: IItemDetails) => {
   const { name, room, area, luggage, imageUrl } = route.params;
-  console.log(imageUrl, "IMAGE");
 
   useLayoutEffect(() => {
     navigation.setOptions({

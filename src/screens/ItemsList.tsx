@@ -8,7 +8,7 @@ import HeaderBackButton from "../elements/HeaderBackButton";
 interface IItemList {}
 
 const ItemList = ({ data, navigation, route }: any) => {
-  const { rooms, itemType, name, items } = route.params;
+  const { rooms, itemType, name, items, areaName } = route.params;
 
   if (!itemType || !name) data = rooms;
   else if (itemType == "room") {
@@ -52,7 +52,6 @@ const ItemList = ({ data, navigation, route }: any) => {
       case "area":
         goHome = false;
         backButtonProps.itemType = "room";
-        console.log(name, "HERE NAME");
         const room = ROOMS.find((room) => room.items.includes(name));
         backButtonProps.name = room?.name;
         backButtonProps.items = room?.items;
@@ -60,7 +59,9 @@ const ItemList = ({ data, navigation, route }: any) => {
       case "luggage":
         goHome = false;
         backButtonProps.itemType = "area";
-        const area = AREAS.find((area) => area.items.includes(name));
+        const area = AREAS.find(
+          (area) => area.items.includes(name) || area.name === areaName
+        );
         backButtonProps.name = area?.name;
         backButtonProps.items = area?.items;
         break;
@@ -104,6 +105,7 @@ const ItemList = ({ data, navigation, route }: any) => {
           itemType: item.type,
           name: item.name,
           items: item.items,
+          areaName: item.areaName,
         });
       } else {
         navigation.navigate("itemDetails", {

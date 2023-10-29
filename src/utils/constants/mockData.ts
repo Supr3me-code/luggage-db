@@ -22,6 +22,7 @@ export const AREAS = [
     items: ["Sample luggage 1", "Sample luggage 2"],
     independentItems: {
       name: "Independent Items",
+      areaName: "Sample area 1",
       type: "luggage",
       items: ["Sample Item 9"],
     },
@@ -32,6 +33,7 @@ export const AREAS = [
     items: ["Sample luggage 3", "Sample luggage 4"],
     independentItems: {
       name: "Independent Items",
+      areaName: "Sample area 2",
       type: "luggage",
       items: ["Sample Item 10"],
     },
@@ -42,6 +44,7 @@ export const AREAS = [
     items: ["Sample luggage 5"],
     independentItems: {
       name: "Independent Items",
+      areaName: "Sample area 3",
       type: "luggage",
       items: [],
     },

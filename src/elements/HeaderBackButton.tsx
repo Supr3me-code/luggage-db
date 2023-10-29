@@ -4,6 +4,7 @@ import React from "react";
 
 const HeaderBackButton = ({ screen, itemType, name, items }: any) => {
   const navigation = useNavigation();
+  
   return (
     <Button
       title="Go Back"
