@@ -1,13 +1,14 @@
-import { Button, StyleSheet } from "react-native";
+import { Button, Pressable, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
+import { AntDesign } from "@expo/vector-icons";
 
 const HeaderBackButton = ({ screen, itemType, name, items }: any) => {
   const navigation = useNavigation();
-  
+
   return (
-    <Button
-      title="Go Back"
+    <Pressable
       onPress={() => {
         navigation.navigate(screen, {
           itemType: itemType,
@@ -15,7 +16,9 @@ const HeaderBackButton = ({ screen, itemType, name, items }: any) => {
           items: items,
         });
       }}
-    />
+    >
+      <AntDesign name="left" size={26} color="black" />
+    </Pressable>
   );
 };
 
