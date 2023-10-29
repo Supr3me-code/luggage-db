@@ -59,7 +59,7 @@ const App = () => {
           ></Stack.Screen>
           <Stack.Screen
             name="create"
-            component={ItemDetails}
+            component={Create}
             options={{
               headerStyle: { backgroundColor: "#ff3200" },
               headerTintColor: "#000",
@@ -72,9 +72,22 @@ const App = () => {
             }}
           ></Stack.Screen>
           <Stack.Screen
+            name="itemDetails"
+            component={ItemDetails}
+            options={{
+              headerStyle: { backgroundColor: "#ff3200" },
+              headerTintColor: "#000",
+              headerShadowVisible: false,
+              headerTitleStyle: {
+                fontSize: 24,
+              },
+              headerBackTitle: "",
+            }}
+          ></Stack.Screen>
+          <Stack.Screen
             name="explore"
             component={ItemList}
-            initialParams={{rooms: ROOMS}}
+            initialParams={{ rooms: ROOMS }}
             options={{
               headerStyle: { backgroundColor: "#ff3200" },
               headerTintColor: "#000",

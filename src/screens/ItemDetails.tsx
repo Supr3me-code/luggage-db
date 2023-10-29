@@ -7,31 +7,33 @@ import LabelCard from "../modules/LabelCard";
 
 interface IItemDetails {
   navigation?: any;
-  room?: string;
-  area?: string;
-  luggage?: string;
-  imageUrl?: string;
+  route?: any;
 }
 
-const ItemDetails = ({ navigation }: IItemDetails) => {
+const ItemDetails = ({ navigation, route }: IItemDetails) => {
+  const { name, room, area, luggage, imageUrl } = route.params;
+  console.log(imageUrl, "IMAGE");
+
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: "Red Saree",
+      title: name,
     });
   }, []);
   return (
     <LinearGradient colors={["#ff3200", "#000"]} style={styles.container}>
       <View style={styles.content}>
-        <LabelCard labelTitle="Room" itemTitle="Dishant's Room" />
-        <LabelCard labelTitle="Area" itemTitle="Bed Top RIght" />
-        <LabelCard labelTitle="Luggage" itemTitle="Pink American Tourister" />
+        <LabelCard labelTitle="Room" itemTitle={room} />
+        <LabelCard labelTitle="Area" itemTitle={area} />
+        <LabelCard labelTitle="Luggage" itemTitle={luggage} />
         <View style={styles.imageContainer}>
-          <Image
-            source={{
-              uri: "https://madisarshop.com/wp-content/uploads/2021/01/black-red-square-pattern-readymade-bharatanatyam-practise-saree.jpg",
-            }}
-            style={styles.image}
-          />
+          {imageUrl && (
+            <Image
+              source={{
+                uri: imageUrl,
+              }}
+              style={styles.image}
+            />
+          )}
         </View>
       </View>
     </LinearGradient>

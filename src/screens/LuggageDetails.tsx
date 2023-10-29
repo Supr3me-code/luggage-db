@@ -2,7 +2,6 @@ import { LinearGradient } from "expo-linear-gradient";
 import React, { useLayoutEffect } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import ListItem from "../elements/ListItem";
-import Label from "../elements/Label";
 import LabelCard from "../modules/LabelCard";
 
 interface ILuggageDetails {

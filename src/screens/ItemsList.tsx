@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from "react";
 import { StyleSheet, View, FlatList } from "react-native";
 import ListItem from "../elements/ListItem";
 import { LinearGradient } from "expo-linear-gradient";
-import { AREAS, ITEMS, LUGGAGES } from "../utils/constants/mockData";
+import { AREAS, ITEMS, LUGGAGES, ROOMS } from "../utils/constants/mockData";
 
 interface IItemList {}
 
@@ -40,6 +40,24 @@ const ItemList = ({ data, navigation, route }: any) => {
   }, [itemType]);
   const renderItem = (itemData: any) => {
     const item = itemData.item;
+    let room: string | undefined;
+    let area: string | undefined;
+    let luggage: string | undefined;
+    if (item.type == "item") {
+      const luggageObj = LUGGAGES.find((obj) => obj.items.includes(item.name));
+      luggage = luggageObj?.name || "Independent Item";
+      let areaObj;
+      if (luggage == "Independent Item") {
+        areaObj = AREAS.find((obj) =>
+          obj.independentItems.items.includes(item.name)
+        );
+      } else {
+        areaObj = AREAS.find((obj) => obj.items.includes(luggage));
+      }
+      area = areaObj?.name;
+      const roomObj = ROOMS.find((obj) => obj.items.includes(area));
+      room = roomObj?.name;
+    }
     const onPressHandler = () => {
       if (item.type !== "item") {
         navigation.navigate("explore", {
@@ -48,7 +66,13 @@ const ItemList = ({ data, navigation, route }: any) => {
           items: item.items,
         });
       } else {
-        navigation.navigate("create");
+        navigation.navigate("itemDetails", {
+          name: item.name,
+          imageUrl: item.imageUrl,
+          room: room,
+          area: area,
+          luggage: luggage,
+        });
       }
     };
     const listItemProps = {
