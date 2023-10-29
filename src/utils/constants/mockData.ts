@@ -8,6 +8,11 @@ export const ROOMS = [
     type: "room",
     items: ["Sample area 1", "Sample area 2"],
   },
+  {
+    name: "Sample Room 2",
+    type: "room",
+    items: ["Sample area 3"],
+  },
 ];
 
 export const AREAS = [
@@ -29,6 +34,16 @@ export const AREAS = [
       name: "Independent Items",
       type: "luggage",
       items: ["Sample Item 10"],
+    },
+  },
+  {
+    name: "Sample area 3",
+    type: "area",
+    items: ["Sample luggage 5"],
+    independentItems: {
+      name: "Independent Items",
+      type: "luggage",
+      items: [],
     },
   },
 ];
@@ -53,6 +68,11 @@ export const LUGGAGES = [
     name: "Sample luggage 4",
     type: "luggage",
     items: ["Sample Item 7", "Sample Item 8"],
+  },
+  {
+    name: "Sample luggage 5",
+    type: "luggage",
+    items: [],
   },
 ];
 

@@ -3,6 +3,7 @@ import { StyleSheet, View, FlatList } from "react-native";
 import ListItem from "../elements/ListItem";
 import { LinearGradient } from "expo-linear-gradient";
 import { AREAS, ITEMS, LUGGAGES, ROOMS } from "../utils/constants/mockData";
+import HeaderBackButton from "../elements/HeaderBackButton";
 
 interface IItemList {}
 
@@ -34,8 +35,47 @@ const ItemList = ({ data, navigation, route }: any) => {
         title = "Items";
         break;
     }
+    let goHome = false;
+    let backButtonProps = {
+      itemType,
+      name,
+      items,
+    };
+    switch (itemType) {
+      case undefined:
+        goHome = true;
+        break;
+      case "room":
+        goHome = false;
+        backButtonProps.itemType = undefined;
+        break;
+      case "area":
+        goHome = false;
+        backButtonProps.itemType = "room";
+        console.log(name, "HERE NAME");
+        const room = ROOMS.find((room) => room.items.includes(name));
+        backButtonProps.name = room?.name;
+        backButtonProps.items = room?.items;
+        break;
+      case "luggage":
+        goHome = false;
+        backButtonProps.itemType = "area";
+        const area = AREAS.find((area) => area.items.includes(name));
+        backButtonProps.name = area?.name;
+        backButtonProps.items = area?.items;
+        break;
+    }
+
     navigation.setOptions({
       title: title,
+      headerLeft: () => (
+        <HeaderBackButton
+          screen={goHome ? "home" : "explore"}
+          itemType={backButtonProps.itemType}
+          name={backButtonProps.name}
+          items={backButtonProps.items}
+        />
+      ),
     });
   }, [itemType]);
   const renderItem = (itemData: any) => {
@@ -43,7 +83,7 @@ const ItemList = ({ data, navigation, route }: any) => {
     let room: string | undefined;
     let area: string | undefined;
     let luggage: string | undefined;
-    if (item.type == "item") {
+    if (item.type === "item") {
       const luggageObj = LUGGAGES.find((obj) => obj.items.includes(item.name));
       luggage = luggageObj?.name || "Independent Item";
       let areaObj;
